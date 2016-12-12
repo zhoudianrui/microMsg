@@ -1,0 +1,12 @@
+#parse("/layout/constants.vm")
+<html>
+    <head>
+        #parse("/layout/head.vm")
+    </head>
+    <body>
+        <div class="content">
+            $screen_content
+        </div>
+        #parse("/layout/foot.vm")
+    </body>
+</html>

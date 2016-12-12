@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolbox>
+    <tool>
+        <key>dateUtil</key>
+        <scope>application</scope>
+        <class>org.apache.velocity.tools.generic.DateTool</class>
+    </tool>
+    <!--<tool key="dateUtil" scope="application" class="org.apache.velocity.tools.generic.DateTool"/>-->
+</toolbox>

@@ -1,0 +1,4 @@
+<p>Welcome to micro msg</p>
+<script type="text/javascript">
+    alertContent("I'm index page");
+</script>
