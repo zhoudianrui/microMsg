@@ -16,6 +16,9 @@
         <slf4j.version>1.7.12</slf4j.version>
         <jcl-over-slf4j.version>1.7.12</jcl-over-slf4j.version>
         <logback.version>1.1.3</logback.version>
+        <maven-compile.version>3.1</maven-compile.version>
+        <javac.version>1.7</javac.version>
+        <maven-war.version>2.4</maven-war.version>
     </properties>
 
     <dependencies>
@@ -102,6 +105,9 @@
             <properties>
                 <env>config/local</env>
             </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
         </profile>
         <profile>
             <id>prod</id>
@@ -110,5 +116,62 @@
             </properties>
         </profile>
     </profiles>
+
+    <build>
+        <finalName>microMsg</finalName>
+
+        <resources>
+            <resource>
+                <directory>${basedir}/src/main/resources</directory>
+                <filtering>true</filtering>
+                <includes>
+                    <include>spring/**</include>
+                    <include>toolbox.xml</include>
+                    <include>velocity.properties</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>${basedir}/src/main/resources/${env}</directory>
+                <includes>
+                    <include>config.properties</include>
+                    <include>logback.xml</include>
+                </includes>
+            </resource>
+        </resources>
+
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compile.version}</version>
+                <configuration>
+                    <source>${javac.version}</source>
+                    <target>${javac.version}</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>${maven-war.version}</version>
+                <configuration>
+                    <outputDirectory>${project.build.outputDirectory}</outputDirectory>
+                    <webResources>
+                        <resource>
+                            <directory>src/main/resources/${env}</directory>
+                            <targetPath>WEB-INF/classes</targetPath>
+                            <fitering>true</fitering>
+                        </resource>
+                    </webResources>
+                    <archive>
+                        <manifest>
+                            <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                            <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+
+    </build>
 
 </project>
