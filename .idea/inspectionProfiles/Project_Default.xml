@@ -8,6 +8,10 @@
     <inspection_tool class="InjectionValueTypeInspection" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="JdkProxiedBeanTypeInspection" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="KotlinSpringComponentScan" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="LoggerInitializedWithForeignClass" enabled="false" level="WARNING" enabled_by_default="false">
+      <option name="loggerClassName" value="org.apache.log4j.Logger,org.slf4j.LoggerFactory,org.apache.commons.logging.LogFactory,java.util.logging.Logger" />
+      <option name="loggerFactoryMethodName" value="getLogger,getLogger,getLog,getLogger" />
+    </inspection_tool>
     <inspection_tool class="RequiredBeanTypeInspection" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="SpellCheckingInspection" enabled="false" level="TYPO" enabled_by_default="false">
       <option name="processCode" value="true" />
@@ -49,6 +53,10 @@
     <inspection_tool class="SpringWebServicesConfigurationsInspection" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="SpringWebSocketConfigurationInspection" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="UtilSchemaInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="VtlFileReferencesInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="VtlInterpolationsInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="VtlReferencesInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="VtlTypesInspection" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="WebflowConfigModelInspection" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="WebflowModelInspection" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="WebflowSetupInspection" enabled="true" level="WARNING" enabled_by_default="true" />
