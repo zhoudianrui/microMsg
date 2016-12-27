@@ -2,8 +2,10 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:frlib="http://www.frlib.com/schema/frlib"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
-       http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd">
+       http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd
+       http://www.frlib.com/schema/frlib http://www.frlib.com/schema/frlib.xsd">
 
     <bean id="velocityConfig" class="org.springframework.web.servlet.view.velocity.VelocityConfigurer">
         <property name="configLocation" value="classpath:velocity.properties"/>
@@ -39,4 +41,5 @@
     </bean>
 
     <mvc:default-servlet-handler/>
+    <frlib:serviceBean id="indexService" name="indexServiceName"></frlib:serviceBean>
 </beans>
