@@ -1,1 +1,1 @@
-#set($basePath = ${rc.contextPath})
+#set($basePath=${rc.contextPath})

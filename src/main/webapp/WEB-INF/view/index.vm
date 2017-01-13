@@ -1,6 +1,12 @@
 <p>Welcome to micro msg</p>
+<form action="/upload.do" method="post" enctype="multipart/form-data">
+上传图片<input type="file" name="uploadPicture"/>
+<button type="submit">提交</button>
+</form>
 <script type="text/javascript">
+    var returnDate = '${date}';
     window.onload = function () {
-        alertContent("I'm index page");
+        var time = formatDate(parseInt(returnDate));
+        alertContent(time);
     }
 </script>

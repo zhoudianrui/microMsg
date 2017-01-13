@@ -18,3 +18,8 @@ function addOnLoadEvent(func) {
 function alertContent(content) {
     alert(content);
 }
+
+function formatDate(dateString) {
+    var date = new Date(dateString);
+    return date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate();
+}

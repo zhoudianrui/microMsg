@@ -2,3 +2,4 @@
 <title>micro msg后台</title>
 <meta http-equiv="content-type" content="text/html;charset=utf-8">
 <link rel="stylesheet" type="text/css" href="${basePath}/css/common.css"/>
+<p class="rightMargin">$date.format("yyyy-MM-dd", $!{userInfo.loginTime})</p>

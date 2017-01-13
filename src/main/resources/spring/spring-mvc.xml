@@ -14,6 +14,8 @@
 
     <bean id="viewResolver" class="org.springframework.web.servlet.view.velocity.VelocityLayoutViewResolver">
         <property name="layoutUrl" value="/layout/template.vm"/>
+        <!-- screenContentKey表示在layoutUrl中使用的属性以加载返回的view -->
+        <!--<property name="screenContentKey" value="screen_content"/>-->
         <property name="toolboxConfigLocation" value="WEB-INF/classes/toolbox.xml"/>
         <property name="suffix" value=".vm"/>
         <property name="cache" value="true"/>

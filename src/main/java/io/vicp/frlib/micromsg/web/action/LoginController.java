@@ -15,8 +15,8 @@ public class LoginController extends BaseController {
 
     @RequestMapping(value = "getUserId")
     @ResponseBody
-    public String getUserId () throws Exception{
-        UserInfo userInfo = checkLogin();
+    public String getUserId (HttpServletRequest httpServletRequest) throws Exception{
+        UserInfo userInfo = checkLogin(httpServletRequest);
         return String.valueOf(userInfo.getUser().getId());
     }
 
