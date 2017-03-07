@@ -76,6 +76,40 @@ public class DateUtil {
         return null;
     }
 
+    /**
+     * 获取一天中最早的时间
+     * @param date
+     * @return
+     */
+    public static Date getEarlliestTime(Date date) {
+        if (date == null) {
+            return null;
+        }
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+        calendar.set(Calendar.HOUR_OF_DAY, 0);
+        calendar.set(Calendar.MINUTE, 0);
+        calendar.set(Calendar.SECOND, 0);
+        return calendar.getTime();
+    }
+
+    /**
+     * 设置一天当中最晚时间
+     * @param date
+     * @return
+     */
+    public static Date getLatestTime(Date date) {
+        if (date == null) {
+            return null;
+        }
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+        calendar.set(Calendar.HOUR_OF_DAY, 23);
+        calendar.set(Calendar.MINUTE, 59);
+        calendar.set(Calendar.SECOND, 59);
+        return calendar.getTime();
+    }
+
     public static void main(String[] args) {
         String dateString = "2016-12-29 12:00:00";
         Date date = convertStringDateWithDefault(dateString, new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"));
